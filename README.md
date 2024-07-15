@@ -47,7 +47,7 @@ $ go run .\main.go
 
 ## Diagram
 
-![Database Diagram](docs/schema_db)
+![Database Diagram](docs/schema_db.png)
 
 ## Output
 
