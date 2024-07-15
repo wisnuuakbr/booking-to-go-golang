@@ -32,7 +32,7 @@ Change the config for your local server
 
 ```bash
 DB_HOST     = localhost
-DB_PORT     = 5433
+DB_PORT     = 5432
 DB_USER     = postgres
 DB_PASSWORD = postgres
 DB_NAME     = booking_to_go_v1
@@ -44,10 +44,6 @@ DB_NAME     = booking_to_go_v1
 $ cd .\cmd\
 $ go run .\main.go
 ```
-
-## Diagram
-
-![Database Diagram](docs/schema_db.png)
 
 ## Output
 
