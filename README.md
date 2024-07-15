@@ -45,10 +45,6 @@ $ cd .\cmd\
 $ go run .\main.go
 ```
 
-## Diagram
-
-![Database Diagram](docs/schema_db.png)
-
 ## Output
 
 ![Output With Family List](docs/output_1.png)
