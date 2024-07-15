@@ -25,7 +25,7 @@ func NewCustomerRepository(db *sql.DB) *customerRepository {
 func (r *customerRepository) GetCustomerByID(ctx context.Context, id int) (*repository.Customer, error) {
 	query := `
 	SELECT 
-			a.cst_id, a.nationality_id, a.cst_name, a.cst_dob, a.cst_phoneNum, a.cst_email,
+			a.cst_id, a.nationality_id, a.cst_name, a.cst_dob, a."cst_phoneNum", a.cst_email,
 			b.nationality_id, b.nationality_name, b.nationality_code
 	FROM customer a
 	LEFT JOIN Nationality b ON a.nationality_id = b.nationality_id
@@ -38,7 +38,7 @@ func (r *customerRepository) GetCustomerByID(ctx context.Context, id int) (*repo
 
 	err := row.Scan(
 		&customer.CstID,
-		&customer.Nationality.NationalityID,
+		&nationality.NationalityID,
 		&customer.Name,
 		&customer.DOB,
 		&customer.PhoneNum,
@@ -50,9 +50,9 @@ func (r *customerRepository) GetCustomerByID(ctx context.Context, id int) (*repo
 
 	if err != nil {
 		if err == sql.ErrNoRows {
-			return nil, fmt.Errorf("data customer not found")
+			return nil, fmt.Errorf("customer data not found")
 		}
-		return nil, err
+		return nil, fmt.Errorf("error scanning customer data: %v", err)
 	}
 
 	customer.Nationality = &nationality

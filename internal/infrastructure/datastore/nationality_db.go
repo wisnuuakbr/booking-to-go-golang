@@ -24,7 +24,7 @@ func (r *nationalityRepository) GetNationalityByID(ctx context.Context, id int) 
 	query := `
 	SELECT 
 		nationality_id, nationality_name, nationality_code
-	FROM Nationality
+	FROM nationality
 	WHERE nationality_id = $1`
 
 	row := r.DB.QueryRowContext(ctx, query, id)

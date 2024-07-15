@@ -22,7 +22,7 @@ func NewFamilyListRepository(db *sql.DB) FamilyListRepository {
 func (r *familyListRepository) GetFamilyListByCustomerID(ctx context.Context, cstID int) ([]*repository.FamilyList, error) {
 	query := `
 	SELECT 
-		fl_id, cst_id, fl_relation, fl_dob
+		fl_id, cst_id, fl_name, fl_relation, fl_dob
 	FROM family_list
 	WHERE cst_id = $1`
 
@@ -35,7 +35,7 @@ func (r *familyListRepository) GetFamilyListByCustomerID(ctx context.Context, cs
 	var familyMembers []*repository.FamilyList
 	for rows.Next() {
 		var familyMember repository.FamilyList
-		if err := rows.Scan(&familyMember.FlID, &familyMember.CstID, &familyMember.Relation, &familyMember.DOB); err != nil {
+		if err := rows.Scan(&familyMember.FlID, &familyMember.CstID, &familyMember.Name, &familyMember.Relation, &familyMember.DOB); err != nil {
 			return nil, err
 		}
 		familyMembers = append(familyMembers, &familyMember)

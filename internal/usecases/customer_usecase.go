@@ -8,14 +8,14 @@ import (
 )
 
 type CustomerUseCase struct {
-	customerRepo datastore.CustomerRepository
-	familyListRepo datastore.FamilyListRepository
+	customerRepo 	datastore.CustomerRepository
+	familyListRepo  datastore.FamilyListRepository
 	nationalityRepo datastore.NationalityRepository
 }
 
 func NewCustomerUseCase(customerRepo datastore.CustomerRepository, familyListRepo datastore.FamilyListRepository, nationalityRepo datastore.NationalityRepository) *CustomerUseCase {
 	return &CustomerUseCase{
-        customerRepo:     customerRepo,
+        customerRepo:    customerRepo,
         familyListRepo:  familyListRepo,
         nationalityRepo: nationalityRepo,
     }

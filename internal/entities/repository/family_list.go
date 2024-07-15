@@ -1,10 +1,9 @@
 package repository
 
-import "time"
-
 type FamilyList struct {
 	FlID     int
 	CstID    int
+	Name	 string
 	Relation string
-	DOB      time.Time
+	DOB      string
 }
