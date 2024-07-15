@@ -45,7 +45,7 @@ func New() *Config {
 			Port:     getEnvAsInt("POSTGRES_PORT_MASTER", 5432),
 			User:     getEnv("POSTGRES_USER_MASTER", "postgres"),
 			Password: getEnv("POSTGRES_PASSWORD_MASTER", "postgres"),
-			DB:       getEnv("POSTGRES_DB_MASTER", "postgres"),
+			DB:       getEnv("POSTGRES_DB_MASTER", "booking_to_go_v1"),
 		},
 	}
 }
