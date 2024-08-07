@@ -21,13 +21,20 @@ Clone the project to your directory and install the dependencies.
 
 ```bash
 $ git clone https://github.com/wisnuuakbr/booking-to-go-golang
+```
+```bash
 $ cd booking-to-go-golang
+```
+```bash
 $ go mod tidy
 ```
 
 ## Configuration
 
 Copy the .env.example file and rename it to .env  
+```bash
+$ cp .env.example .env
+```  
 Change the config for your local server
 
 ```bash
@@ -38,11 +45,10 @@ DB_PASSWORD = postgres
 DB_NAME     = booking_to_go_v1
 ```
 
-## Running Server
+## Run Application
 
 ```bash
-$ cd .\cmd\
-$ go run .\main.go
+$ go run .\cmd\main.go
 ```
 
 ## Output
